@@ -1,66 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hoja de Vida - María José Monteros Abril</title>
-  <meta name="description" content="Hoja de vida en HTML puro, sin CSS." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoja de Vida – Juan Carlos Carrillo</title>
+  <style>
+    /* ====== Estilos básicos y limpios ====== */
+    :root{
+      --bg:#f8fafc;         /* gris muy claro */
+      --ink:#0f172a;        /* texto principal */
+      --muted:#475569;      /* texto secundario */
+      --card:#ffffff;       /* fondo de tarjeta */
+      --line:#e5e7eb;       /* bordes suaves */
+      --accent:#2563eb;     /* azul discreto */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial}
+    h1,h2{margin:0 0 .6rem}
+    h1{font-size:1.8rem}
+    h2{font-size:1rem;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+    .page{max-width:840px;margin:32px auto;padding:0 16px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+    .stack{display:grid;gap:14px}
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:1fr 1fr}
+    .kvs{display:grid;grid-template-columns:160px 1fr;gap:8px 16px}
+    .kvs b{color:var(--muted)}
+    hr{border:0;border-top:1px solid var(--line);margin:12px 0}
+    ul{margin:6px 0 0 18px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    /* Impresión */
+    @media print{
+      body{background:#fff}
+      .page{margin:0}
+      .card{border-color:#ddd}
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>María José Monteros Abril</h1>
-    <p>
-      <strong>Cédula:</strong> 0202053831
-      | <strong>Correo:</strong> monterosmarijo2004@gmail.com
-      | <strong>País:</strong> Ecuador
-      | <strong>Provincia:</strong> Bolívar, Cantón San José de Chimbo
-      | <strong>Dirección:</strong> Juan Montalvo y Olmedo
-    </p>
-    <hr />
-  </header>
+  <main class="page stack">
+    <header class="card">
+      <h1>Hoja de Vida</h1>
+      <div class="kvs" aria-label="Datos personales">
+        <b>Nombre</b><span>Juan Carlos Carrillo</span>
+        <b>Cédula</b><span>0201774213</span>
+        <b>Celular</b><span><a href="tel:+593939858902">0939858902</a></span>
+        <b>Correo</b><span><a href="mailto:juanc.c@yahoo.com">juanc.c@yahoo.com</a></span>
+        <b>Dirección</b><span>Guaranda</span>
+      </div>
+    </header>
 
-  <main>
-    <section aria-labelledby="perfil">
-      <h2 id="perfil">Perfil</h2>
-      <p>
-        Estudiante de desarrollo de software que apenas sabe lo básico 
-      </p>
+    <section class="card stack">
+      <h2>Formación Académica</h2>
+      <div>Bachiller</div>
     </section>
 
-    <section aria-labelledby="habilidades">
-      <h2 id="habilidades">Habilidades</h2>
-      <ul>
-        <li>Lenguajes: Java, Python (aprendiendo)</li>
-        <li>Manejo de Git y GitHub (aprendiendo)</li>
-        <li>Bases de datos: MySQL</li>
-      </ul>
+    <section class="card stack">
+      <h2>Experiencia Laboral</h2>
+      <div>Sin experiencia registrada.</div>
     </section>
 
-    <section aria-labelledby="educacion">
-      <h2 id="educacion">Educación</h2>
-      <article>
-        <h3>Estudiante — Instituto Tecnológico Superior El Libertador</h3>
-        <p><strong>Ubicación:</strong> Bolívar, Ecuador</p>
-      </article>
+    <section class="card stack">
+      <h2>Cursos</h2>
+      <div>No registrados.</div>
     </section>
 
-    <section aria-labelledby="idiomas">
-      <h2 id="idiomas">Idiomas</h2>
-      <ul>
-        <li>Español — Nativo</li>
-        <li>Inglés — Nivel Básico</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="referencias">
-      <h2 id="referencias">Referencias</h2>
-      <p>Disponibles a solicitud.</p>
+    <section class="card stack">
+      <h2>Referencias</h2>
+      <div>Disponibles a solicitud.</div>
     </section>
   </main>
-
-  <nav>
-    <button type="button" onclick="window.print()">Imprimir</button>
-  </nav>
-
 </body>
 </html>
